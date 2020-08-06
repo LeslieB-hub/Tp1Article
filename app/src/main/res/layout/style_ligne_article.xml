@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="XXX"
+        android:textStyle="bold"
+        android:textAlignment="center"
+
+        />
+
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintLeft_toLeftOf="@id/tv_name"
+        android:text="prix"
+
+        />
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_price"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="description"
+
+        />
+
+    <RatingBar
+        android:id="@+id/tv_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_description"
+        android:isIndicator="true"
+        android:numStars="5"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+
+        />
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_label_rating"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginRight="48dp"-->
+<!--        app:layout_constraintRight_toRightOf="@+id/tv_rating"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_name"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/tv_description"-->
+<!--        android:text="note"-->
+<!--        />-->
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/btn_modify"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_description"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+
+
+<!--        />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/btn_delete"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_description"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        android:text="Supprimer"-->
+
+<!--        />-->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
