@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         InterfaceArticleRepository repoArticle = new ArticleBddRepository(this);
         ArticleViewModel vm = ViewModelProviders.of(this).get(ArticleViewModel.class);
 
-/*        Article article1 = new Article("pain au chocolat", (float) 40.0, "Description",(float) 10, false, "www.google.com");
+/*        Article article1 = new Article("pain au chocolat", 40.0f, "Description",(float) 10, false, "www.google.com");
         repoArticle.insert(article1);*/
 
         LiveData<List<Article>> observateur = vm.getArticles();
@@ -81,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_recherche:
                 Toast.makeText(this,"Recherche", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_add_item:
+                Intent intentInsert = new Intent(this, InsertArticleActivity.class);
+                startActivity(intentInsert);
                 return true;
             default:
         return super.onOptionsItemSelected(item);

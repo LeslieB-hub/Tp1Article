@@ -39,10 +39,12 @@ public class InsertArticleActivity extends AppCompatActivity {
         EditText etLink = findViewById(R.id.et_link_articleM);
         String link = etLink.getText().toString();
 
-        Article articleInsert = new Article(name, price, description, (float) 0,false, link); //id, String name, String description, Float rating, Boolean isBought, String link
+        Article articleInsert = new Article(name, price, description, 0f,false, link); //id, String name, String description, Float rating, Boolean isBought, String link
         repoArticle.insert(articleInsert);
 
         Toast.makeText(this, name + description, Toast.LENGTH_LONG).show();
+        //permet de retourner à la page précédente sans utiliser les intent
+        finish();
 
     }
 
