@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- "ifRoom" indique que le bouton Recherche sera affiché dans l’action barre s’il y a l’espace suffisant -->
 
+    <item
+
+        android:id="@+id/action_recherche"
+        android:icon="@android:drawable/btn_star"
+        android:title="Recherche"
+        app:showAsAction="ifRoom"/>
+
+    <!-- “never” indique que le bouton preferences sera visible dans le menu ‘configuration’ en haut à gauche -->
+
+    <item android:id="@+id/action_settings"
+        android:title="Preferences"
+        app:showAsAction="never"/>
 </menu>

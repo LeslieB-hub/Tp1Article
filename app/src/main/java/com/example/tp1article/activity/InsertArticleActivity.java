@@ -1,8 +1,11 @@
 package com.example.tp1article.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -41,6 +44,29 @@ public class InsertArticleActivity extends AppCompatActivity {
 
         Toast.makeText(this, name + description, Toast.LENGTH_LONG).show();
 
+    }
+
+    //ICI : ON LIE L’ACTION BARRE À L'ACTIVITÉ
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //on décompresse le xml du menu
+        getMenuInflater().inflate(R.menu.mon_menu, menu);
+        return true;
+    }
+
+    //ICI : ON DÉFINIT LES ACTIONS DE L’ACTION BARRE
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                Toast.makeText(this,"Préférences", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_recherche:
+                Toast.makeText(this,"Recherche", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 

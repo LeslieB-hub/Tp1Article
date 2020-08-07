@@ -1,10 +1,13 @@
 package com.example.tp1article.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -60,5 +63,28 @@ public class DisplayArticle extends AppCompatActivity {
     public void onClickReturnList(View view) {
         Intent intentList = new Intent(DisplayArticle.this, listeArticleActivity.class);
         startActivity(intentList);
+    }
+
+    //ICI : ON LIE L’ACTION BARRE À L'ACTIVITÉ
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //on décompresse le xml du menu
+        getMenuInflater().inflate(R.menu.mon_menu, menu);
+        return true;
+    }
+
+    //ICI : ON DÉFINIT LES ACTIONS DE L’ACTION BARRE
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_settings:
+                Toast.makeText(this,"Préférences", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_recherche:
+                Toast.makeText(this,"Recherche", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
